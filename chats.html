@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>chats</title>
+    <style type="text/css">
+        .outer_fram{
+            width:1200px;
+            height:800px;
+            border:1px solid #666;
+            margin: 70px auto auto auto;
+            background:#f9f9f9;
+        }
+        .chat_fram{
+            width:999px;
+            height:650px;
+            border:1px solid #666;
+            background:#fff;
+            margin:60px 0px 0px 200px;
+            overflow:auto;
+        }
+        .talk_input{
+            width:px;
+            margin:auto;
+        }
+        .input_fram{
+            width:878px;
+            height:26px;
+            padding:10px;
+            float:left;
+            margin:0px 0px 80px 200px;
+            outline:none;
+            text-indent:10px;
+        }
+        .send_button{
+            width:86px;
+            height:50px;
+            float:left;
+            margin-left:10px;
+        }
+        .chat_list {
+            overflow: hidden;
+            float: left;
+            height: 546px;
+            width: 200px;
+            border: 1px solid yellow;
+            background-color: white;
+        }
+
+        .usertalk{
+            margin:10px;
+            text-align:right;
+        }
+        .usertalk span{
+            display:inline-block;
+            background:#ef8201;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+    </style>
+    <script type="text/javascript">
+    //
+        window.onload = function(){
+            var Words = document.getElementById("message");
+            var TalkWords = document.getElementById("talkwords");
+            var TalkSub = document.getElementById("talksub");
+
+            TalkSub.onclick = function(){
+                var str = "";
+                if(TalkWords.value == ""){
+                    alert("can not send empty message");
+                    return;
+                }
+                str = '<div class="usertalk"><span>' + TalkWords.value +'</span></div>' ;
+                Words.innerHTML = Words.innerHTML + str;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="outer_fram">
+        <div class="chat_fram" id="message">
+
+            <div class="usertalk"><span id="usertalk">hey</span></div>
+
+        </div>
+        <div class="talk_input">
+            <input type="text" class="input_fram" id="talkwords">
+            <input type="button" value="send" class="send_button" id="talksub">
+        </div>
+    </div>
+</body>
+</html>
